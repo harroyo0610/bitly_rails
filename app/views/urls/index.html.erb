@@ -1,0 +1,19 @@
+<h1>Bienvenido a La pagina secreta!</h1>
+
+<%= form_for @url, method: 'post' do |f| %> 
+  <p>
+    <%= f.text_field :long_url %>
+  </p> 
+  <p>
+    <%= f.submit 'Guardar URL' %>
+  </p> 
+<% end %>
+
+<p>TODAS URLS:</p> 
+<% @urls.each do |url| %>
+  <%= link_to "http://codea.com/" +  url.short_url , url.long_url, target: "_blank"  %><br>
+<% end %>
+<hr>
+<hr>
+<hr>
+<a href="/logout" ><button type="button">Logout</button></a>
